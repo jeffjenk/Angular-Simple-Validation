@@ -28,7 +28,7 @@ To add basic validation to an input you need to do 3 things:
 
 1. Make sure to specify a model for your field as this is how we get access to those useful ngMessages: `<input name="validation-example" ng-model="validate-me" />`
 
-2. Add the attribute `simple-validation` to the field you would like to validate: `<input name="validation-example" simple-validation />`
+2. Add the attribute `simple-validation` to the field you would like to validate: `<input name="validation-example" ng-model="validate-me" simple-validation />`
 
 3. Add input attributes to define what sort of vlaidtion you would like to perform. Specifying `reqiured` will fire if the field is empty. Specifying type such as `number` or email will validate on type. Adding a `maxlength` or `minlength` will validate on character length: `<input name="validation-example" ng-model="validate-me" simple-validation type="email" required />`
 
