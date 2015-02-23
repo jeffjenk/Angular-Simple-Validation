@@ -35,6 +35,38 @@ To add basic validation to an input you need to do 3 things:
 This field will now validate on blur.
 
 # Advanced usage
+
+## Angular UI Select
+
+You can add validation to a ui-select html element much like a normal input:
+###### HTML
+```html
+<ui-select ng-model="person.selected" ng-disabled="disabled" simple-validation required>
+    <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="person in people">
+      <div ng-bind-html="person.name | highlight: $select.search"></div>
+      <small>
+        email: {{person.email}}
+        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+      </small>
+    </ui-select-choices>
+  </ui-select>
+```
+###### Javascript for list of people in controller
+```javascript
+$scope.person = {};
+$scope.people = [
+  { name: 'Adam',      email: 'adam@email.com',      age: 10 },
+  { name: 'Amalie',    email: 'amalie@email.com',    age: 12 },
+  { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30 },
+  { name: 'Samantha',  email: 'samantha@email.com',  age: 31 },
+  { name: 'Estefanía', email: 'estefanía@email.com', age: 16 },
+  { name: 'Natasha',   email: 'natasha@email.com',   age: 54 },
+  { name: 'Nicole',    email: 'nicole@email.com',    age: 43 },
+  { name: 'Adrian',    email: 'adrian@email.com',    age: 21 }
+];
+```
+
 ## Custom validation methods
 You can pass a custom method to the directive from your controller with relative ease. The directive expects an array of objects with a key and a value. For example if I wanted to validate a number as even I could define the following function in my controller:
 ```javascript
