@@ -13,7 +13,7 @@ This is a simple angular directive that allows you to easily add ngMessages vali
 ```
 
 Rename the module in the directive (angular-simple-validation.js) to match your app:
-```Javascript
+```javascript
 'use strict';
 angular.module('AppName') //rename to your app module name in your app.js
   .directive('simpleValidation', function ($parse) {
@@ -26,8 +26,7 @@ Now you should be good to go.
 
 To add basic validation to an input you need to do 3 things:
 
-1. Make sure to specify a model for your field as this is how we get access to those useful ngMessages: `<input name="validation-example" ng-model="validate-me" />
-`
+1. Make sure to specify a model for your field as this is how we get access to those useful ngMessages: `<input name="validation-example" ng-model="validate-me" />`
 
 2. Add the attribute `simple-validation` to the field you would like to validate: `<input name="validation-example" simple-validation simple-validation />`
 
@@ -55,19 +54,19 @@ $scope.checkIfEven = function (value) {
 ```
 
 Then you can pass the method to the directive using the `custom-validation` attribute:
-```
+```html
 <input name="validation-example" type="number" ng-model="validate-me" simple-validation  custom-validation="checkIfEven(value)" />
 ``` 
 
 ## Custom messages
 
 You can add custom messages for existing validation messages such as`required` or custom validation messages such as the `even` example above by matching the validation `key` and appending it with `-message` and adding it as an attribute to the field. For example you can override the `required` message like this:
-```
+```html
 <input name="validation-example" ng-model="validate-me" simple-validation type="email" required required-message="This is a custom required message." />
 ```
 
 or for our even example above:
-```
+```html
 <input name="validation-example" type="number" ng-model="validate-me" simple-validation  custom-validation="checkIfEven(value)" even-message="The number must be even." />
 ``` 
 
