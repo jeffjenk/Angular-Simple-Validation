@@ -38,7 +38,7 @@ This field will now validate on blur.
 # Advanced usage
 ## Custom validation methods
 You can pass a custom method to the directive from your controller with relative ease. The directive expects an array of objects with a key and a value. For example if I wanted to validate a number as even I could define the following function in my controller:
-```
+```javascript
 $scope.checkIfEven = function (value) {
   var response = [{
     key: 'even', //you can call the key anything just watch out for existing keys such as required, email, etc...
