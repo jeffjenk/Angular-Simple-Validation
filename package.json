@@ -31,7 +31,8 @@
     "grunt-karma": "~0.10.1",
     "jasmine-core": "~2.2.0",
     "karma": "~0.12.31",
-    "karma-jasmine": "~0.3.5"
+    "karma-jasmine": "~0.3.5",
+    "grunt-build-control": "~0.3.0"
   },
   "engines": {
     "node": ">=0.10.0"
